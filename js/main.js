@@ -26,9 +26,9 @@ $(document).ready(function () {
   }
   $(".header-menu").on("click", () => {
     if (!modalMenu) {
-      $(".modal-menu").css("display", "block");
+      $(".modal-menu").css("display", "flex");
       $(".modal-menu").animate({
-        right: "0",
+        top: "0",
       });
       $(".header-menu-img").attr("src", "img/close.svg");
       /** @type {boolean} */
