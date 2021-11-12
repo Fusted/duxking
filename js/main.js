@@ -1,13 +1,13 @@
 "use strict";
 $(document).ready(function () {
   if (localStorage.getItem("story")) {
-    $(".modal-cookie").fadeOut();
+    $(".modal__cookie").fadeOut();
   } else {
-    $(".modal-cookie").fadeIn();
+    $(".modal__cookie").fadeIn();
   }
-  $(".modal-cookie-button").click(function () {
+  $(".modal__cookie-button").click(function () {
     localStorage.setItem("story", "true");
-    $(".modal-cookie").fadeOut();
+    $(".modal__cookie").fadeOut();
   });
   let modalMenu = false;
   let modalSign = false;
@@ -15,8 +15,8 @@ $(document).ready(function () {
     $(".header-user").text("Log-out");
     $(".hero__nav").removeClass("show");
     $(".hero__nav").addClass("hide");
-    $(".hero-subtitle").css("margin-bottom", "0");
-    $(".modal-sign").addClass("hide");
+    $(".header__subtitle").css("margin-bottom", "0");
+    $(".modal__sign").addClass("hide");
     $("body").css("overflow", "visible");
     /** @type {boolean} */
     modalSign = false;
@@ -24,31 +24,31 @@ $(document).ready(function () {
     $(".hero__nav").removeClass("hide");
     $(".hero__nav").addClass("show");
   }
-  $(".header-menu").on("click", () => {
+  $(".header__menu").on("click", () => {
     if (!modalMenu) {
-      $(".modal-menu").css("display", "flex");
-      $(".modal-menu").animate({
+      $(".modal__menu").css("display", "flex");
+      $(".modal__menu").animate({
         top: "0",
       });
-      $(".header-menu-img").attr("src", "img/close.svg");
+      $(".header__menu-img").attr("src", "img/close.svg");
       /** @type {boolean} */
       modalMenu = true;
     } else {
-      $(".modal-menu").animate({
+      $(".modal__menu").animate({
         right: "-100%",
       });
-      $(".modal-menu").css("display", "none");
-      $(".header-menu-img").attr("src", "img/menu.svg");
+      $(".modal__menu").css("display", "none");
+      $(".header__menu-img").attr("src", "img/menu.svg");
       /** @type {boolean} */
       modalMenu = false;
     }
   });
-  $("ul.modal-sign-nav").on("click", "li:not(.active)", function () {
+  $("ul.modal__sign-nav").on("click", "li:not(.active)", function () {
     $(this)
       .addClass("active")
       .siblings()
       .removeClass("active")
-      .closest("div.modal-sign-block")
+      .closest("div.modal__sign-block")
       .find("div.tabs__content")
       .removeClass("active")
       .eq($(this).index())
@@ -56,55 +56,55 @@ $(document).ready(function () {
   });
   $(".game-open-modal").on("click", () => {
     event.preventDefault();
-    $(".modal-game").fadeIn();
+    $(".modal__game").fadeIn();
     $("body").css("overflow", "hidden");
     $(".overlay").fadeIn();
   });
   $(".overlay").on("click", () => {
-    $(".modal-game").fadeOut();
+    $(".modal__game").fadeOut();
     $("body").css("overflow", "auto");
     $(".overlay").fadeOut();
   });
-  $(".modal-close").on("click", () => {
-    $(".modal-game").fadeOut();
+  $(".modal__close").on("click", () => {
+    $(".modal__game").fadeOut();
     $("body").css("overflow", "auto");
     $(".overlay").fadeOut();
   });
-  $(".hero-btn__signup").on("click", () => {
+  $(".header__btn__signup").on("click", () => {
     if (!modalSign) {
-      $(".modal-sign").removeClass("hide");
-      $(".modal-sign").addClass("show");
+      $(".modal__sign").removeClass("hide");
+      $(".modal__sign").addClass("show");
       $(".modal-login").removeClass("active");
-      $(".modal-sign-log").removeClass("active");
-      $(".modal-signUp").addClass("active");
-      $(".modal-sign-up").addClass("active");
+      $(".modal__sign-log").removeClass("active");
+      $(".modal__signUp").addClass("active");
+      $(".modal__sign-up").addClass("active");
       $("body").css("overflow", "hidden");
       /** @type {boolean} */
       modalSign = true;
     }
   });
-  $(".hero-btn__login").on("click", () => {
+  $(".header__btn__login").on("click", () => {
     if (!modalSign) {
-      $(".modal-sign").removeClass("hide");
-      $(".modal-sign").addClass("show");
-      $(".modal-signUp").removeClass("active");
-      $(".modal-sign-up").removeClass("active");
+      $(".modal__sign").removeClass("hide");
+      $(".modal__sign").addClass("show");
+      $(".modal__signUp").removeClass("active");
+      $(".modal__sign-up").removeClass("active");
       $(".modal-login").addClass("active");
-      $(".modal-sign-log").addClass("active");
+      $(".modal__sign-log").addClass("active");
       $("body").css("overflow", "hidden");
       /** @type {boolean} */
       modalSign = true;
     }
   });
-  $(".modal-sign-close").on("click", () => {
+  $(".modal__sign-close").on("click", () => {
     if (modalSign) {
-      $(".modal-sign").removeClass("show");
+      $(".modal__sign").removeClass("show");
       /** @type {boolean} */
       modalSign = false;
       $("body").css("overflow", "visible");
     }
   });
-  $(".modal-sign-up-form").validate({
+  $(".modal__sign-up-form").validate({
     rules: {
       email: "required",
       password: {
@@ -134,15 +134,15 @@ $(document).ready(function () {
       }
     },
     submitHandler: function () {
-      $(".modal-sign-up-success").fadeIn().delay(2000).fadeOut();
-      $(".modal-sign").removeClass("show");
-      $(".modal-sign").addClass("hide");
+      $(".modal__sign-up-success").fadeIn().delay(2000).fadeOut();
+      $(".modal__sign").removeClass("show");
+      $(".modal__sign").addClass("hide");
       /** @type {boolean} */
       modalSign = false;
       $("body").css("overflow", "visible");
     },
   });
-  $(".modal-sign-log-form").on("submit", function (event) {
+  $(".modal__sign-log-form").on("submit", function (event) {
     event.preventDefault();
     if ($("#signlog-email").val() != "admin@gmail.com") {
       $("#signlog-email").val("Error");
@@ -153,13 +153,13 @@ $(document).ready(function () {
         $.ajax({
           success: function (theDirectoryEntry) {
             localStorage.setItem("story-auth", "true");
-            $(".modal-sign-log-success").fadeIn().delay(2000).fadeOut();
+            $(".modal__sign-log-success").fadeIn().delay(2000).fadeOut();
             $(".header-user").text("Log-out");
             $(".hero__nav").removeClass("show");
             $(".hero__nav").addClass("hide");
-            $(".hero-subtitle").css("margin-bottom", "0");
-            $(".modal-sign").removeClass("show");
-            $(".modal-sign").addClass("hide");
+            $(".header__subtitle").css("margin-bottom", "0");
+            $(".modal__sign").removeClass("show");
+            $(".modal__sign").addClass("hide");
             /** @type {boolean} */
             modalSign = false;
             $("body").css("overflow", "visible");
@@ -191,8 +191,8 @@ $(document).ready(function () {
     },
     submitHandler: function () {
       console.log("fjdisf");
-      $(".modal-sign-up-success").fadeIn().delay(2000).fadeOut();
-      $(".modal-game").fadeOut();
+      $(".modal__sign-up-success").fadeIn().delay(2000).fadeOut();
+      $(".modal__game").fadeOut();
       $(".overlay").fadeOut();
       $("body").css("overflow", "visible");
     },
