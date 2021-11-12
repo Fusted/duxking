@@ -171,14 +171,14 @@ button:focus {
 body {
     font-family: geometria, sans-serif;
     font-weight: 400;
-    background: #0e0b14;
+    background: #1a0e07;
     color: #fdfbfe;
     position: relative;
     overflow-x: hidden;
     font-size: 25px;
 }
 .modal__menu {
-    background: #000228;
+    background: #4a260f;
     width: 100vw;
     padding: 20px 30px;
     display: none;
@@ -203,7 +203,7 @@ body {
 }
 
 .modal__menu-item:hover {
-    background: #1a2454;
+    background: #ecda88;
 }
 .modal__menu-active {
     background: #00a3ff;
@@ -290,7 +290,7 @@ body {
 
 .header {
     /* padding: 15px 0; */
-    background: #1a2454;
+    background: #ecda88;
 }
 .header .container {
     height: 100%
@@ -355,7 +355,7 @@ body {
 }
 .soon {
     padding: 15px 0;
-    background: #1a2454;
+    background: #ecda88;
 }
 .header__btn {
     margin: 10px auto;
@@ -368,7 +368,7 @@ body {
 }
 .free__wrap {
     padding: 25px 0;
-    background: #000228;
+    background: #4a260f;
 }
 .free__wrap h1 {
     margin: 0;
@@ -426,7 +426,7 @@ body {
     font-size: 14px;
 }
 .disclaim {
-    background: #1a2454;
+    background: #ecda88;
     padding: 50px 0;
 }
 .header__btn__login {
@@ -806,7 +806,7 @@ label.error {
     width: 150px;
     height: 50px;
     text-decoration: none;
-    background: #0e0b14;
+    background: #1a0e07;
     border-radius: 50px;
     font-family: geometria-bold, sans-serif;
     font-weight: 700;
