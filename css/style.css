@@ -67,7 +67,7 @@ img {
 }
 button, input, optgroup, select, textarea {
     font-family: inherit;
-    font-size: 99%;
+    font-size: 70%;
     line-height: 1.14;
     margin: 0;
 }
@@ -231,7 +231,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 100vw;
+    width: 70%;
     height: 50vh;
     display: flex;
     justify-content: center;
@@ -245,12 +245,11 @@ body {
 .modal__sign-block {
     background: #fdfbfe;
     position: relative;
-
 }
 .modal__sign-close {
     z-index: 1000;
     position: absolute;
-    /* top: -100px; */
+    top: 0px;
     right: -100px;
     height: 100px;
     width: 100px;
@@ -271,6 +270,7 @@ body {
     color: #000;
 }
 .modal__sign-nav {
+    font-size: 25px;
     list-style: none;
     padding: 0;
     display: flex;
@@ -281,7 +281,7 @@ body {
     cursor: pointer;
     height: 100px;
     /* width: 340px; */
-    font-size: 25px;
+    /* font-size: 25px; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -703,10 +703,10 @@ label.error {
     margin-right: 10px;
 }
 .modal__sign-up-accept {
-    /* margin-top: 34px; */
+    margin-top: 20px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     position: relative;
     color: #383333;
 }
@@ -716,10 +716,11 @@ label.error {
     left: 0;
 }
 .modal__sign-up-link {
-    color: #000;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
 }
 .modal__sign-up-btn {
-    width: 293px;
+    width: 90%;
     height: 84px;
     background: linear-gradient(180deg, #41c6ff 0%, #004fc7 100%);
     box-shadow: 0 0 50px rgb(0 163 255/50%);
@@ -746,6 +747,7 @@ label.error {
     position: relative;
 }
 .modal__sign-log-form {
+    width: 70%;
     padding: 30px;
     display: flex;
     flex-flow: column;
@@ -896,11 +898,40 @@ label.error {
     height: 60px;
 }
 
+.underline {
+    text-decoration: underline;
+}
 
 /* adaptive */
 
 
 @media screen and (max-width:768px) {
+    .modal__sign-up-link {
+        font-size: 3vw;
+    }
+      
+
+    .signup-privacy {
+        font-size: 15px;
+    }
+
+
+    .modal__sign-nav li {
+        font-size: 4vw;
+        height: 50px;
+    }
+
+    .modal__sign-close {
+        height: 50px;
+        width: 50px;
+        right: 0;
+        top: -50px;
+    }
+
+    .modal__sign-up-check {
+        /* font-size: 21px; */
+    }
+
     .soon__games-block {
         grid-template-columns: 1fr 1fr 1fr;
     }
@@ -932,11 +963,6 @@ label.error {
     }
    
 
-}@media screen and (max-width:400px) {
-    .play__block {
-        grid-template-columns: 1fr;
-    }
-
 }@media screen and (max-width:600px) {
     .soon__games-block {
         grid-template-columns: 1fr;
@@ -949,6 +975,11 @@ label.error {
     .container {
         padding: 20px;
     }
+}@media screen and (max-width:400px) {
+    .play__block {
+        grid-template-columns: 1fr;
+    }
+
 }
 
 
